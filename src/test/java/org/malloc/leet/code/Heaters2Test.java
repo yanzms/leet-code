@@ -1,19 +1,15 @@
-package org.stray.leet.code;
+package org.malloc.leet.code;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 /**
- * 计算使用空间
- * Runtime runtime = Runtime.getRuntime();
- * long c = runtime.totalMemory() - runtime.freeMemory();
- *
  * @author yanzm
- * @since 2020/6/4
+ * @since 2020/6/9
  */
-class Heaters1Test {
+class Heaters2Test {
 
-    private final Heaters1 heaters = new Heaters1();
+    private final Heaters2 heaters = new Heaters2();
 
     @Test
     void findRadius() {

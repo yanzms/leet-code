@@ -1,9 +1,7 @@
-package org.stray.leet.code.offer;
+package org.malloc.leet.code.offer;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author yanzm

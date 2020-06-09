@@ -1,16 +1,15 @@
-package org.stray.leet.code;
+package org.malloc.leet.code;
 
-import java.util.BitSet;
+import java.util.Arrays;
 
 /**
- * The type Heaters 2.
+ * The type Heaters 3.
  *
  * @author yanzm
  * @since 2020 /6/9
  */
-public class Heaters2 {
+public class Heaters3 {
     private static final int MAX_NUM = 1000000000;
-
 
     /**
      * Find radius int.
@@ -20,33 +19,31 @@ public class Heaters2 {
      * @return the int
      */
     public int findRadius(int[] houses, int[] heaters) {
+        Arrays.sort(houses);
+        Arrays.sort(heaters);
         int leftHouse = MAX_NUM, rightHouse = 0;
-        BitSet housesBit = new BitSet();
         for (int house : houses) {
             leftHouse = Math.min(leftHouse, house);
             rightHouse = Math.max(rightHouse, house);
-            housesBit.set(house);
         }
         int leftHeater = MAX_NUM, rightHeater = 0;
-        BitSet heatersBit = new BitSet();
         for (int heater : heaters) {
             leftHeater = Math.min(leftHeater, heater);
             rightHeater = Math.max(rightHeater, heater);
-            heatersBit.set(heater);
         }
         int radius = 0;
         for (int heater : heaters) {
-            int pre = heatersBit.previousSetBit(heater - 1);
+            int pre = previousArray(heaters, heater - 1);
             if (pre == -1) {
                 continue;
             }
-            if (!this.checkSetRange(housesBit, pre, heater)) {
+            if (!this.checkArrayRange(houses, pre, heater)) {
                 continue;
             }
             int center = (heater + pre) / 2;
             boolean isE = ((heater + pre) & 1) > 0;
-            int preHouse = housesBit.previousSetBit(isE ? center - 1 : center);
-            int nextHouse = housesBit.nextSetBit(isE ? center + 1 : center);
+            int preHouse = previousArray(houses, isE ? center - 1 : center);
+            int nextHouse = nextArray(houses, isE ? center + 1 : center);
             if (preHouse == -1) {
                 radius = Math.max(radius, Math.min(nextHouse - pre, heater - nextHouse));
             } else if (nextHouse == -1) {
@@ -60,9 +57,30 @@ public class Heaters2 {
         return radius;
     }
 
-    private boolean checkSetRange(BitSet bitSet, int from, int to) {
-        for (int i = from; i < to; ++i) {
-            if (bitSet.get(i)) {
+
+    private int previousArray(int[] array, int from) {
+        int maxVal = -1;
+        for (int value : array) {
+            if (value <= from) {
+                maxVal = Math.max(maxVal, value);
+            }
+        }
+        return maxVal;
+    }
+
+    private int nextArray(int[] array, int from) {
+        int minVal = MAX_NUM;
+        for (int value : array) {
+            if (value >= from) {
+                minVal = Math.min(minVal, value);
+            }
+        }
+        return minVal == MAX_NUM ? -1 : minVal;
+    }
+
+    private boolean checkArrayRange(int[] array, int from, int to) {
+        for (int value : array) {
+            if (value >= from && value < to) {
                 return true;
             }
         }

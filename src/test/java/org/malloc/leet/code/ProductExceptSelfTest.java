@@ -1,4 +1,4 @@
-package org.stray.leet.code;
+package org.malloc.leet.code;
 
 import org.junit.jupiter.api.Test;
 

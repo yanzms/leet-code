@@ -1,19 +1,19 @@
-package org.stray.leet.code;
+package org.malloc.leet.code;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.stream.IntStream;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 /**
+ * 计算使用空间
+ * Runtime runtime = Runtime.getRuntime();
+ * long c = runtime.totalMemory() - runtime.freeMemory();
+ *
  * @author yanzm
- * @since 2020/6/9
+ * @since 2020/6/4
  */
-class Heaters4Test {
+class Heaters1Test {
 
-    private final Heaters4 heaters = new Heaters4();
+    private final Heaters1 heaters = new Heaters1();
 
     @Test
     void findRadius() {
@@ -45,20 +45,5 @@ class Heaters4Test {
         int radius = heaters.findRadius(new int[]{282475249, 622650073, 984943658, 144108930, 470211272, 101027544, 457850878, 458777923},
                 new int[]{823564440, 115438165, 784484492, 74243042, 114807987, 137522503, 441282327, 16531729, 823378840, 143542612});
         Assertions.assertEquals(161834419, radius);
-    }
-
-    @Test
-    void findRadius6() {
-        int[] houseArray = IntStream.range(1, 22226).toArray();
-        int[] heaterArray = IntStream.range(2, 22227).toArray();
-        int radius = heaters.findRadius(houseArray, heaterArray);
-        Assertions.assertEquals(1, radius);
-    }
-
-    @Test
-    void findRadius7() {
-        int radius = heaters.findRadius(new int[]{581030105, 557810404, 146319451, 908194298, 500782188, 657821123},
-                new int[]{102246882, 269406752, 816731566, 884936716, 807130337, 578354438});
-        Assertions.assertEquals(79466685, radius);
     }
 }

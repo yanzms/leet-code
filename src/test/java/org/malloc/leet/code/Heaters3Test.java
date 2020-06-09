@@ -1,11 +1,9 @@
-package org.stray.leet.code;
+package org.malloc.leet.code;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.stream.IntStream;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author yanzm
