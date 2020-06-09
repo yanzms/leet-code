@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 /**
- * @author yanzm
+ * @author malloc
  * @since 2020/6/9
  */
 class Heaters2Test {

@@ -5,7 +5,7 @@ import java.util.BitSet;
 /**
  * The type Heaters 2.
  *
- * @author yanzm
+ * @author malloc
  * @since 2020 /6/9
  */
 public class Heaters2 {

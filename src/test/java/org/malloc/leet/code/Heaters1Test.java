@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
  * Runtime runtime = Runtime.getRuntime();
  * long c = runtime.totalMemory() - runtime.freeMemory();
  *
- * @author yanzm
+ * @author malloc
  * @since 2020/6/4
  */
 class Heaters1Test {

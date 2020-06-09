@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.stream.IntStream;
 
 /**
- * @author yanzm
+ * @author malloc
  * @since 2020/6/9
  */
 class Heaters4Test {

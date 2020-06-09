@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * The type Heaters 3.
  *
- * @author yanzm
+ * @author malloc
  * @since 2020 /6/9
  */
 public class Heaters3 {

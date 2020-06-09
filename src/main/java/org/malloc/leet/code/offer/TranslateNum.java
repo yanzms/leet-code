@@ -3,7 +3,7 @@ package org.malloc.leet.code.offer;
 /**
  * 面试题46. 把数字翻译成字符串
  *
- * @author yanzm
+ * @author malloc
  * @since 2020/6/9
  */
 public class TranslateNum {

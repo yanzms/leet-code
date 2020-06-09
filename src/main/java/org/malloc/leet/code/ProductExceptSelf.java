@@ -4,7 +4,7 @@ package org.malloc.leet.code;
  * 238
  * The type Product except self.
  *
- * @author yanzm
+ * @author malloc
  * @since 2020 /6/4
  */
 public class ProductExceptSelf {

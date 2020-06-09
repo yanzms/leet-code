@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * @author yanzm
+ * @author malloc
  * @since 2020/6/4
  */
 class ProductExceptSelfTest {

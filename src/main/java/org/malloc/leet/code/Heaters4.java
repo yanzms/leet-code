@@ -3,7 +3,7 @@ package org.malloc.leet.code;
 import java.util.Arrays;
 
 /**
- * @author yanzm
+ * @author malloc
  * @since 2020/6/9
  */
 public class Heaters4 {

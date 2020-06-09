@@ -3,7 +3,7 @@ package org.malloc.leet.code;
 /**
  * 475. Heaters
  *
- * @author yanzm
+ * @author malloc
  * @since 2020 /6/4
  */
 public class Heaters1 {
