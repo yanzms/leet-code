@@ -57,8 +57,17 @@ public class Heaters4 {
         }
         int center = (fromIndex + toIndex) / 2;
         if (array[center] > from) {
+            if (fromIndex == center) {
+                return -1;
+            }
             return previousArray(array, fromIndex, center, from);
         } else if (array[center] < from) {
+            if (fromIndex == center) {
+                if (array[toIndex] < from) {
+                    return array[toIndex];
+                }
+                return array[center];
+            }
             return previousArray(array, center, toIndex, from);
         } else {
             return from;
@@ -74,9 +83,18 @@ public class Heaters4 {
             }
         }
         int center = (fromIndex + toIndex) / 2;
-        if (array[center] < from) {
+        if (array[center] > from) {
+            if (fromIndex == center) {
+                return array[center];
+            }
             return nextArray(array, fromIndex, center, from);
-        } else if (array[center] > from) {
+        } else if (array[center] < from) {
+            if (fromIndex == center) {
+                if (array[toIndex] > from) {
+                    return array[toIndex];
+                }
+                return -1;
+            }
             return nextArray(array, center, toIndex, from);
         } else {
             return from;
