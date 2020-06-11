@@ -1,4 +1,4 @@
-package org.malloc.leet.code.offer;
+package org.malloc.leet.code.sword.offer;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

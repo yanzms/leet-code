@@ -1,4 +1,4 @@
-package org.malloc.leet.code.offer;
+package org.malloc.leet.code.sword.offer;
 
 /**
  * 面试题46. 把数字翻译成字符串
