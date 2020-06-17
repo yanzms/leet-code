@@ -12,27 +12,38 @@ public class DeleteAndEarn {
 
     /**
      * Delete and earn int.
+     * 转化成不能连续获得点数，类比198.打家劫舍
      *
      * @param nums the nums
      * @return the int
      */
     public int deleteAndEarn(int[] nums) {
-        int[] count = new int[10001];
-        for (int x : nums) count[x]++;
-        int avoid = 0, using = 0, prev = -1;
+        if (nums.length == 0) {
+            return 0;
+        } else if (nums.length == 1) {
+            return nums[0];
+        }
+        int[] cntArray = new int[10001];
+        for (int i : nums) {
+            cntArray[i]++;
+        }
+        int[] array = new int[10001];
+        for (int i : nums) {
+            array[i] = i;
+        }
+        int preUsing = this.getMul(cntArray, array, 0) + this.getMul(cntArray, array, 2),
+                preAvoiding = Math.max(this.getMul(cntArray, array, 0), this.getMul(cntArray, array, 1)),
+                prePreAvoiding = this.getMul(cntArray, array, 0);
+        for (int i = 3; i < 10001; ++i) {
+            int tempUsing = Math.max(preAvoiding, prePreAvoiding) + this.getMul(cntArray, array, i);
+            prePreAvoiding = preAvoiding;
+            preAvoiding = preUsing;
+            preUsing = tempUsing;
+        }
+        return Math.max(preUsing, Math.max(preAvoiding, prePreAvoiding));
+    }
 
-        for (int k = 0; k <= 10000; ++k)
-            if (count[k] > 0) {
-                int m = Math.max(avoid, using);
-                if (k - 1 != prev) {
-                    using = k * count[k] + m;
-                    avoid = m;
-                } else {
-                    using = k * count[k] + avoid;
-                    avoid = m;
-                }
-                prev = k;
-            }
-        return Math.max(avoid, using);
+    private int getMul(int[] cntArray, int[] array, int i) {
+        return cntArray[array[i]] * array[i];
     }
 }
