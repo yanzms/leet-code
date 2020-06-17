@@ -31,8 +31,14 @@ public class DeleteAndEarn {
         for (int i : nums) {
             array[i] = i;
         }
+        /*
+         * preAvoiding从某种角度来看是不需要Max的
+         * 循环中已经使用了Max来获得using
+         * 可以看出最大值属性已经被带出来了
+         * 所以取不同的值既即可
+         * */
         int preUsing = this.getMul(cntArray, array, 0) + this.getMul(cntArray, array, 2),
-                preAvoiding = Math.max(this.getMul(cntArray, array, 0), this.getMul(cntArray, array, 1)),
+                preAvoiding = this.getMul(cntArray, array, 1),
                 prePreAvoiding = this.getMul(cntArray, array, 0);
         for (int i = 3; i < 10001; ++i) {
             int tempUsing = Math.max(preAvoiding, prePreAvoiding) + this.getMul(cntArray, array, i);
